@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmulas del Pentágono</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+        
+        <h1 class="colored-title"><span class="title-blueDos">Fórmulas del</span> <span class="title-blueUno">Pentagono</span></h1>
+        
+        <div class="formula-section">
+            <div class="formula-header">
+                <img src="/src/iconosfor/pentagono.png" alt="">
+                <h2>Área del Pentágono Regular</h2>
+            </div>
+            <div class="formula-content">
+                <p class="formula">A = (P × a) / 2</p>
+                <p>Donde:</p>
+                <ul class="variables-list">
+                    <li><span class="variable">A</span>: Área</li>
+                    <li><span class="variable">P</span>: Perímetro (5 × L)</li>
+                    <li><span class="variable">a</span>: Apotema</li>
+                </ul>
+                <div class="derivation">
+                    <h3>¿Cómo se obtiene?</h3>
+                    <p>El área de un pentágono regular se calcula multiplicando su perímetro por la apotema y dividiendo entre 2. La apotema es la distancia desde el centro al punto medio de un lado.</p>
+                </div>
+                <div class="example">
+                    <h3>Ejemplo práctico</h3>
+                    <p>Para un pentágono con lado 6 y apotema 4.13:</p>
+                    <p class="calculation">A = (5 × 6 × 4.13) / 2 ≈ 61.95 unidades²</p>
+                </div>
+                
+                <div class="calculator">
+                    <h3>Calculadora de Área</h3>
+                    <div class="input-group">
+                        <label for="lado-pentagono-area">Longitud del lado:</label>
+                        <input type="number" id="lado-pentagono-area" placeholder="Ingrese longitud del lado">
+                    </div>
+                    <div class="input-group">
+                        <label for="apotema">Apotema:</label>
+                        <input type="number" id="apotema" placeholder="Ingrese la apotema">
+                    </div>
+                    <button class="calculate-btn" onclick="calcularAreaPentagono()">Calcular Área</button>
+                    <div class="resultado" id="resultado-area"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <div class="formula-header">
+                <i class="fas fa-ruler"></i>
+                <h2>Perímetro del Pentágono</h2>
+            </div>
+            <div class="formula-content">
+                <p class="formula">P = 5L</p>
+                <p>Donde:</p>
+                <ul class="variables-list">
+                    <li><span class="variable">P</span>: Perímetro</li>
+                    <li><span class="variable">L</span>: Longitud de un lado</li>
+                </ul>
+                <div class="derivation">
+                    <h3>¿Cómo se obtiene?</h3>
+                    <p>El perímetro es la suma de las longitudes de sus cinco lados iguales. Como todos los lados son iguales en un pentágono regular, se multiplica la longitud de un lado por 5.</p>
+                </div>
+                <div class="example">
+                    <h3>Ejemplo práctico</h3>
+                    <p>Para un pentágono con lados de 6 unidades:</p>
+                    <p class="calculation">P = 5 × 6 = 30 unidades</p>
+                </div>
+                
+                <div class="calculator">
+                    <h3>Calculadora de Perímetro</h3>
+                    <div class="input-group">
+                        <label for="lado-pentagono-perimetro">Longitud del lado:</label>
+                        <input type="number" id="lado-pentagono-perimetro" placeholder="Ingrese longitud del lado">
+                    </div>
+                    <button class="calculate-btn" onclick="calcularPerimetroPentagono()">Calcular Perímetro</button>
+                    <div class="resultado" id="resultado-perimetro"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+<footer class="footer">
+  <p>&copy; 2025 Calculadora Geométrica | Hecho con ❤️ para aprender mejor</p>
+</footer>
+</div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

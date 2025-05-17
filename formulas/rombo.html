@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórmulas del Rombo</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <div class="container">
+        <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+        
+         <h1 class="colored-title"><span class="title-blueDos">Fórmulas del</span> <span class="title-blueUno">Rombo</span></h1>
+        
+        <div class="formula-section">
+            <div class="formula-header">
+                <img src="/src/iconosfor/rombo.png" alt="">
+                <h2>Área del Rombo</h2>
+            </div>
+            <div class="formula-content">
+                <p class="formula">A = (D × d) / 2</p>
+                <p>Donde:</p>
+                <ul class="variables-list">
+                    <li><span class="variable">A</span>: Área</li>
+                    <li><span class="variable">D</span>: Diagonal mayor</li>
+                    <li><span class="variable">d</span>: Diagonal menor</li>
+                </ul>
+                <div class="derivation">
+                    <h3>¿Cómo se obtiene?</h3>
+                    <p>El área de un rombo se calcula multiplicando sus dos diagonales y dividiendo entre 2. Esto es equivalente a la fórmula del área de un triángulo aplicada a las cuatro mitades del rombo.</p>
+                </div>
+                <div class="example">
+                    <h3>Ejemplo práctico</h3>
+                    <p>Para un rombo con diagonales de 8 y 6 unidades:</p>
+                    <p class="calculation">A = (8 × 6) / 2 = 24 unidades²</p>
+                </div>
+                
+                <div class="calculator">
+                    <h3>Calculadora de Área</h3>
+                    <div class="input-group">
+                        <label for="diagonal-mayor">Diagonal mayor:</label>
+                        <input type="number" id="diagonal-mayor" placeholder="Ingrese diagonal mayor">
+                    </div>
+                    <div class="input-group">
+                        <label for="diagonal-menor">Diagonal menor:</label>
+                        <input type="number" id="diagonal-menor" placeholder="Ingrese diagonal menor">
+                    </div>
+                    <button class="calculate-btn" onclick="calcularAreaRombo()">Calcular Área</button>
+                    <div class="resultado" id="resultado-area"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="formula-section">
+            <div class="formula-header">
+                <i class="fas fa-ruler-combined"></i>
+                <h2>Perímetro del Rombo</h2>
+            </div>
+            <div class="formula-content">
+                <p class="formula">P = 4L</p>
+                <p>Donde:</p>
+                <ul class="variables-list">
+                    <li><span class="variable">P</span>: Perímetro</li>
+                    <li><span class="variable">L</span>: Longitud de un lado</li>
+                </ul>
+                <div class="derivation">
+                    <h3>¿Cómo se obtiene?</h3>
+                    <p>El perímetro es la suma de las longitudes de sus cuatro lados iguales. Como todos los lados son iguales, se multiplica la longitud de un lado por 4.</p>
+                </div>
+                <div class="example">
+                    <h3>Ejemplo práctico</h3>
+                    <p>Para un rombo con lados de 5 unidades:</p>
+                    <p class="calculation">P = 4 × 5 = 20 unidades</p>
+                </div>
+                
+                <div class="calculator">
+                    <h3>Calculadora de Perímetro</h3>
+                    <div class="input-group">
+                        <label for="lado-rombo">Longitud del lado:</label>
+                        <input type="number" id="lado-rombo" placeholder="Ingrese longitud del lado">
+                    </div>
+                    <button class="calculate-btn" onclick="calcularPerimetroRombo()">Calcular Perímetro</button>
+                    <div class="resultado" id="resultado-perimetro"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+<footer class="footer">
+  <p>&copy; 2025 Calculadora Geométrica | Hecho con ❤️ para aprender mejor</p>
+</footer>
+</div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>

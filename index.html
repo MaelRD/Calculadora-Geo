@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Geométrica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/linzo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    <header class="main-header">
+    <div class="logo">
+        <h1 class="site-title">Calculadora Geométrica</h1>
+    </div>
+    <nav class="nav-bar">
+        <ul>
+        <li><a href="#figuras">Figuras</a></li>
+        <li><a href="#lienzo">Lienzo</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    </header>
+
+
+
+
+    <div class="container">
+        <h1 class="colored-title">
+  <span class="title-blueUno">Calculadora</span>
+  <span class="title-blueDos">Geométrica</span>
+        </h1>
+
+        <h2 class="subtitle-colorful">Selecciona una figura para ver sus fórmulas y calcular</h2>
+        
+        <div class="figures-grid" id="figuras">
+            <!-- Cuadrado -->
+            <a href="formulas/cuadrado.html" class="figure-card">
+                <div class="figure-icon">
+                   <img width="96" height="96" src="src/cuadrado.png" alt="unchecked-checkbox"/>
+                </div>
+                <h3>Cuadrado</h3>
+                <div class="hover-content">
+                    <p>Calcular propiedades</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            
+            <!-- Triángulo -->
+            <a href="formulas/triangulo.html" class="figure-card">
+                <div class="figure-icon">
+                    <img width="96" height="96" src="src/trrianlo.png" alt="triangle-stroked"/>
+                </div>
+                <h3>Triángulo</h3>
+                <div class="hover-content">
+                    <p>Calcular propiedades</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            
+            <!-- Círculo -->
+            <a href="formulas/circulo.html" class="figure-card">
+                <div class="figure-icon">
+                    <img width="96" height="96" src="src/circulo.png" alt="filled-circle"/>
+                </div>
+                <h3>Círculo</h3>
+                <div class="hover-content">
+                    <p>Calcular propiedades</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            
+            <!-- Rectángulo -->
+            <a href="formulas/rectangulo.html" class="figure-card">
+                <div class="figure-icon">
+                    <img width="96" height="96" src="src/rectanulo.png" alt="rounded-rectangle"/>
+                </div>
+                <h3>Rectángulo</h3>
+                <div class="hover-content">
+                    <p>Calcular propiedades</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            
+            <!-- Rombo -->
+            <a href="formulas/rombo.html" class="figure-card">
+                <div class="figure-icon">
+                    <img width="96" height="96" src="src/rombo.png" alt="rhombus"/>
+                </div>
+                <h3>Rombo</h3>
+                <div class="hover-content">
+                    <p>Calcular propiedades</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+            
+            <!-- Pentágono -->
+            <a href="formulas/pentagono.html" class="figure-card">
+                <div class="figure-icon">
+                    <img width="96" height="96" src="src/pentagono.png" alt="pentagon"/>
+                </div>
+                <h3>Pentágono</h3>
+                <div class="hover-content">
+                    <p>Calcular propiedades</p>
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+    <div class="container">
+
+        <h1 class="colored-title">
+  <span class="title-blueUno">Construir</span>
+  <span class="title-blueDos">Lienzo</span>
+        </h1>
+        <h2 class="subtitle-colorful">
+            Utiliza esta seccion para dibujar y experimentar con figuras geométricas.
+        </h2>
+
+        <div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+              <label for="modoDibujo">Modo:</label>
+              <select id="modoDibujo">
+              <option value="puntos">Puntos</option>
+              <option value="lapiz">Lápiz</option>
+              </select>
+            </div>
+
+           <canvas id="lienzo" width="500" height="500" style="border:1px solid #000;"></canvas>
+
+                <div id="infoFigura">
+                    <p>Puntos: <span id="puntos">0</span></p>
+                    <p>Perímetro: <span id="perimetro">0</span> px</p>
+                    <p>Área: <span id="area">0</span> px²</p>
+                </div>
+            <button onclick="reiniciar()">Reiniciar</button>
+         </div>
+    </div>
+<script src="js/canva.js"></script>
+    <div>
+<footer class="footer">
+  <p>&copy; 2025 Calculadora Geométrica | Hecho con ❤️ para aprender mejor</p>
+</footer>
+</div>
+</body>
+</html>
