@@ -182,3 +182,59 @@ function snapToAngle(x1, y1, x2, y2) {
 
   return { x: snappedX, y: snappedY };
 }
+// AUTOCORRECCIÓN INTELIGENTE EN MODO LÁPIZ
+canvas.addEventListener("mousemove", (e) => {
+  if (modo === "lapiz" && dibujando) {
+    const pos = obtenerPosicion(e);
+
+    // Autocorrección: alinea a ángulos principales
+    const anterior = puntosLapiz[puntosLapiz.length - 1];
+    const corregido = snapToAngle(anterior.x, anterior.y, pos.x, pos.y);
+    
+    puntosLapiz.push(corregido);
+    dibujarLinea(anterior, corregido);
+  }
+});
+
+// AUTOCORRECCIÓN INTELIGENTE EN MODO PUNTOS
+canvas.addEventListener("click", (e) => {
+  if (modo !== "puntos" && modo !== "cuadrado") return;
+
+  const pos = obtenerPosicion(e);
+  let puntoCorregido = pos;
+
+  if (puntos.length > 0 && modo === "puntos") {
+    const anterior = puntos[puntos.length - 1];
+    puntoCorregido = snapToAngle(anterior.x, anterior.y, pos.x, pos.y);
+  }
+
+  puntos.push(puntoCorregido);
+  dibujarPunto(puntoCorregido.x, puntoCorregido.y);
+
+  const len = puntos.length;
+
+  if (modo === "puntos" && len > 1) {
+    dibujarLinea(puntos[len - 2], puntos[len - 1]);
+  }
+
+  if (modo === "puntos" && len > 2) {
+    cerrarFigura(puntos);
+    calcularPerimetro(puntos);
+    calcularArea(puntos);
+  }
+
+  if (modo === "cuadrado" && len === 4) {
+    const puntosCuadrado = corregirCuadrado(puntos);
+    reiniciarCanvas(); // limpiamos canvas y dibujamos limpio
+    puntosCuadrado.forEach(p => dibujarPunto(p.x, p.y));
+    for (let i = 0; i < 4; i++) {
+      dibujarLinea(puntosCuadrado[i], puntosCuadrado[(i + 1) % 4]);
+    }
+    cerrarFigura(puntosCuadrado);
+    calcularPerimetro(puntosCuadrado);
+    calcularArea(puntosCuadrado);
+    puntos = puntosCuadrado;
+  }
+
+  document.getElementById("puntos").textContent = puntos.length;
+});

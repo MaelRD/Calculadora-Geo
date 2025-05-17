@@ -6,36 +6,35 @@
     <title>Calculadora Geométrica</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/linzo.css">
+    <link rel="stylesheet" href="css/header.css">
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     
 </head>
 <body>
 
-    <header class="main-header">
-    <div class="logo">
-        <h1 class="site-title">Calculadora Geométrica</h1>
-    </div>
-    <nav class="nav-bar">
-        <ul>
+<header class="hero-header">
+  <div class="nav-container">
+    <div class="logo">Calculadora de <span class="highlight">Figuras</span></div>
+    <nav class="nav-menu" aria-label="Menú principal">
+      <ul>
         <li><a href="#figuras">Figuras</a></li>
         <li><a href="#lienzo">Lienzo</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-        </ul>
+      </ul>
     </nav>
-    </header>
+  </div>
+</header>
 
 
 
-
-    <div class="container">
+    <div class="container" id="figuras">
         <h1 class="colored-title">
-  <span class="title-blueUno">Calculadora</span>
-  <span class="title-blueDos">Geométrica</span>
+  <span class="title-blueUno">Banco de</span>
+  <span class="title-blueDos">Figuras</span>
         </h1>
 
         <h2 class="subtitle-colorful">Selecciona una figura para ver sus fórmulas y calcular</h2>
         
-        <div class="figures-grid" id="figuras">
+        <div class="figures-grid">
             <!-- Cuadrado -->
             <a href="formulas/cuadrado.html" class="figure-card">
                 <div class="figure-icon">
@@ -113,7 +112,7 @@
 
     <div class="container">
 
-        <h1 class="colored-title">
+        <h1 class="colored-title" id="dibujar">
   <span class="title-blueUno">Construir</span>
   <span class="title-blueDos">Lienzo</span>
         </h1>
@@ -143,7 +142,7 @@
 <script src="js/canva.js"></script>
     <div>
 <footer class="footer">
-  <p>&copy; 2025 Calculadora Geométrica | Hecho con ❤️ para aprender mejor</p>
+    © 2025 Calculadora Geométrica | Desarrollado por <a href="https://github.com/MaelRD" target="_blank" rel="noopener">MaelRD</a>
 </footer>
 </div>
 </body>
