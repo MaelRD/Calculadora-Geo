@@ -20,6 +20,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Estilo para el canvas */
@@ -30,6 +31,8 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: crosshair;
   transition: border-color 0.3s;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 #lienzo:hover {
@@ -91,6 +94,7 @@ body {
   font-family: var(--font);
   margin: 2rem;
   color: var(--secondary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 canvas {
@@ -123,6 +127,7 @@ button {
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s;
+  
 }
 
 button:hover {

@@ -16,10 +16,10 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--primary-color);
     background-color: var(--light-gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -37,6 +37,9 @@ h1 {
     font-weight: 300;
     color: var(--primary-color);
     font-size: 2.2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    
 }
 
 .subtitle {
@@ -44,7 +47,8 @@ h1 {
     margin-bottom: 30px;
     color: var(--dark-gray);
     font-weight: 300;
-    font-family: cursive;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .figures-grid {
@@ -66,6 +70,8 @@ h1 {
     position: relative;
     overflow: hidden;
     border: 1px solid rgba(0, 0, 0, 0.05);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .figure-card:hover {
@@ -100,7 +106,8 @@ h1 {
     justify-content: center;
     opacity: 0;
     transition: var(--transition);
-    font-family: Arial, 'Lilita One', cursive;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .figure-card:hover .hover-content {
@@ -147,6 +154,7 @@ h1 {
     display: flex;
     align-items: center;
     gap: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .formula-header i {
@@ -167,6 +175,7 @@ h1 {
     margin: 15px 0;
     color: var(--accent-color);
     border-left: 4px solid var(--accent-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .variables-list {
@@ -293,31 +302,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     margin-bottom: 30px;
     letter-spacing: 1px;
-    font-family: 'Bungee', cursive;
-}
-
-.footer {
-    background: var(--primary-color);
-    color: var(--white);
-    text-align: center;
-    padding: 24px 10px 18px 10px;
-    font-size: 1rem;
-    border-radius: 0 0 8px 8px;
-    box-shadow: var(--box-shadow);
-    margin-top: 60px;
-    letter-spacing: 0.5px;
-}
-
-.footer a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-}
-
-.footer a:hover {
-    color: var(--accent-color);
-    text-decoration: underline;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 768px) {
@@ -378,9 +363,5 @@ h1 {
     }
     .calculate-btn {
         width: 100%;
-    }
-    .footer {
-        font-size: 0.95rem;
-        padding: 16px 5px 12px 5px;
     }
 }
