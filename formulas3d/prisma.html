@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórmulas del Prisma Rectangular</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+
+    <h1 class="colored-title"><span class="title-blueDos">Fórmulas del</span> <span class="title-blueUno">Prisma Rectangular</span></h1>
+
+    <div class="formula-section">
+      <div class="formula-header">
+        <i class="fas fa-cubes"></i>
+        <h2>Volumen del Prisma</h2>
+      </div>
+      <div class="formula-content">
+        <p class="formula">V = L × W × H</p>
+        <p>Donde:</p>
+        <ul class="variables-list">
+          <li><span class="variable">V</span>: Volumen</li>
+          <li><span class="variable">L</span>: Largo</li>
+          <li><span class="variable">W</span>: Ancho</li>
+          <li><span class="variable">H</span>: Altura</li>
+        </ul>
+        <div class="derivation">
+          <h3>¿Cómo se obtiene?</h3>
+          <p>El volumen de un prisma rectangular es el área de la base (rectángulo) por la altura.</p>
+        </div>
+        <div class="example">
+          <h3>Ejemplo práctico</h3>
+          <p>Para un prisma con L=5, W=3, H=2:</p>
+          <p class="calculation">V = 5 × 3 × 2 = 30 unidades³</p>
+        </div>
+        <div class="calculator">
+          <h3>Calculadora de Volumen</h3>
+          <div class="input-group">
+            <label for="largo-prisma">Largo (L):</label>
+            <input type="number" id="largo-prisma" placeholder="L">
+          </div>
+          <div class="input-group">
+            <label for="ancho-prisma">Ancho (W):</label>
+            <input type="number" id="ancho-prisma" placeholder="W">
+          </div>
+          <div class="input-group">
+            <label for="alto-prisma">Altura (H):</label>
+            <input type="number" id="alto-prisma" placeholder="H">
+          </div>
+          <button class="calculate-btn" onclick="calcularVolumenPrisma()">Calcular</button>
+          <p id="resultado-volumen-prisma"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calcularVolumenPrisma() {
+      const L = parseFloat(document.getElementById('largo-prisma').value);
+      const W = parseFloat(document.getElementById('ancho-prisma').value);
+      const H = parseFloat(document.getElementById('alto-prisma').value);
+      if ([L,W,H].some(x => isNaN(x) || x <= 0)) {
+        document.getElementById('resultado-volumen-prisma').textContent = 'Ingrese valores válidos.';
+        return;
+      }
+      const V = L * W * H;
+      document.getElementById('resultado-volumen-prisma').textContent = `Volumen = ${V} unidades³`;
+    }
+  </script>
+</body>
+</html>

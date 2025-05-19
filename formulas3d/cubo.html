@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórmulas del Cubo</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+
+    <h1 class="colored-title"><span class="title-blueDos">Fórmulas del</span> <span class="title-blueUno">Cubo</span></h1>
+
+    <div class="formula-section">
+      <div class="formula-header">
+        <i class="fas fa-cube"></i>
+        <h2>Volumen del Cubo</h2>
+      </div>
+      <div class="formula-content">
+        <p class="formula">V = L³</p>
+        <p>Donde:</p>
+        <ul class="variables-list">
+          <li><span class="variable">V</span>: Volumen</li>
+          <li><span class="variable">L</span>: Longitud del lado</li>
+        </ul>
+        <div class="derivation">
+          <h3>¿Cómo se obtiene?</h3>
+          <p>El volumen del cubo se calcula elevando al cubo la longitud de uno de sus lados, ya que sus tres dimensiones (largo, ancho y alto) son iguales.</p>
+        </div>
+        <div class="example">
+          <h3>Ejemplo práctico</h3>
+          <p>Para un cubo con lado de 4 unidades:</p>
+          <p class="calculation">V = 4 × 4 × 4 = 64 unidades³</p>
+        </div>
+        <div class="calculator">
+          <h3>Calculadora de Volumen</h3>
+          <div class="input-group">
+            <label for="lado-volumen">Longitud del lado:</label>
+            <input type="number" id="lado-volumen" placeholder="Ingrese la longitud">
+          </div>
+          <button class="calculate-btn" onclick="calcularVolumenCubo()">Calcular</button>
+          <p id="resultado-volumen"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calcularVolumenCubo() {
+      const lado = parseFloat(document.getElementById('lado-volumen').value);
+      if (!isNaN(lado) && lado > 0) {
+        const volumen = Math.pow(lado, 3);
+        document.getElementById('resultado-volumen').textContent = `Volumen = ${volumen} unidades cúbicas`;
+      } else {
+        document.getElementById('resultado-volumen').textContent = 'Ingrese un valor válido.';
+      }
+    }
+  </script>
+</body>
+</html>

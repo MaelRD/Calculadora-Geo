@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórmulas de la Esfera</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+
+    <h1 class="colored-title"><span class="title-blueDos">Fórmulas de la</span> <span class="title-blueUno">Esfera</span></h1>
+
+    <div class="formula-section">
+      <div class="formula-header">
+        <i class="fas fa-globe"></i>
+        <h2>Volumen de la Esfera</h2>
+      </div>
+      <div class="formula-content">
+        <p class="formula">V = (4/3) × π × r³</p>
+        <p>Donde:</p>
+        <ul class="variables-list">
+          <li><span class="variable">V</span>: Volumen</li>
+          <li><span class="variable">r</span>: Radio</li>
+        </ul>
+        <div class="derivation">
+          <h3>¿Cómo se obtiene?</h3>
+          <p>Se deriva de la integración en coordenadas esféricas para medir todo el volumen interior.</p>
+        </div>
+        <div class="example">
+          <h3>Ejemplo práctico</h3>
+          <p>Para una esfera con r=3:</p>
+          <p class="calculation">V = (4/3)×π×3³ ≈ 113.10 unidades³</p>
+        </div>
+        <div class="calculator">
+          <h3>Calculadora de Volumen</h3>
+          <div class="input-group">
+            <label for="radio-esfera">Radio:</label>
+            <input type="number" id="radio-esfera" placeholder="r">
+          </div>
+          <button class="calculate-btn" onclick="calcularVolumenEsfera()">Calcular</button>
+          <p id="resultado-volumen-esfera"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calcularVolumenEsfera() {
+      const r = parseFloat(document.getElementById('radio-esfera').value);
+      if (isNaN(r) || r <= 0) {
+        document.getElementById('resultado-volumen-esfera').textContent = 'Ingrese un valor válido.';
+        return;
+      }
+      const V = (4/3) * Math.PI * Math.pow(r, 3);
+      document.getElementById('resultado-volumen-esfera').textContent = `Volumen = ${V.toFixed(2)} unidades³`;
+    }
+  </script>
+</body>
+</html>

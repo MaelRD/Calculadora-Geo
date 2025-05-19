@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórmulas del Cono</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+
+    <h1 class="colored-title"><span class="title-blueDos">Fórmulas del</span> <span class="title-blueUno">Cono</span></h1>
+
+    <div class="formula-section">
+      <div class="formula-header">
+        <i class="fas fa-concierge-bell"></i>
+        <h2>Volumen del Cono</h2>
+      </div>
+      <div class="formula-content">
+        <p class="formula">V = (1/3) × π × r² × h</p>
+        <p>Donde:</p>
+        <ul class="variables-list">
+          <li><span class="variable">V</span>: Volumen</li>
+          <li><span class="variable">r</span>: Radio de la base</li>
+          <li><span class="variable">h</span>: Altura</li>
+        </ul>
+        <div class="derivation">
+          <h3>¿Cómo se obtiene?</h3>
+          <p>Es un tercio del volumen de un cilindro de misma base y altura.</p>
+        </div>
+        <div class="example">
+          <h3>Ejemplo práctico</h3>
+          <p>Para un cono con r=3, h=6:</p>
+          <p class="calculation">V = (1/3)×π×3²×6 ≈ 56.55 unidades³</p>
+        </div>
+        <div class="calculator">
+          <h3>Calculadora de Volumen</h3>
+          <div class="input-group">
+            <label for="radio-cono">Radio:</label>
+            <input type="number" id="radio-cono" placeholder="r">
+          </div>
+          <div class="input-group">
+            <label for="altura-cono">Altura:</label>
+            <input type="number" id="altura-cono" placeholder="h">
+          </div>
+          <button class="calculate-btn" onclick="calcularVolumenCono()">Calcular</button>
+          <p id="resultado-volumen-cono"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calcularVolumenCono() {
+      const r = parseFloat(document.getElementById('radio-cono').value);
+      const h = parseFloat(document.getElementById('altura-cono').value);
+      if (isNaN(r)||isNaN(h)||r<=0||h<=0) {
+        document.getElementById('resultado-volumen-cono').textContent = 'Ingrese valores válidos.';
+        return;
+      }
+      const V = (1/3) * Math.PI * r * r * h;
+      document.getElementById('resultado-volumen-cono').textContent = `Volumen = ${V.toFixed(2)} unidades³`;
+    }
+  </script>
+</body>
+</html>

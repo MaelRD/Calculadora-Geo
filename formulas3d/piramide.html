@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fórmulas de la Pirámide</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <a href="../index.html" class="back-button"><i class="fas fa-arrow-left"></i> Volver</a>
+
+    <h1 class="colored-title"><span class="title-blueDos">Fórmulas de la</span> <span class="title-blueUno">Pirámide</span></h1>
+
+    <div class="formula-section">
+      <div class="formula-header">
+        <i class="fas fa-project-diagram"></i>
+        <h2>Volumen de la Pirámide</h2>
+      </div>
+      <div class="formula-content">
+        <p class="formula">V = (1/3) × B × h</p>
+        <p>Donde:</p>
+        <ul class="variables-list">
+          <li><span class="variable">V</span>: Volumen</li>
+          <li><span class="variable">B</span>: Área de la base</li>
+          <li><span class="variable">h</span>: Altura</li>
+        </ul>
+        <div class="derivation">
+          <h3>¿Cómo se obtiene?</h3>
+          <p>Es un tercio del volumen del prisma que tendría la misma base y altura.</p>
+        </div>
+        <div class="example">
+          <h3>Ejemplo práctico</h3>
+          <p>Para base rectangular 4×3 (B=12) y h=6:</p>
+          <p class="calculation">V = (1/3)×12×6 = 24 unidades³</p>
+        </div>
+        <div class="calculator">
+          <h3>Calculadora de Volumen</h3>
+          <div class="input-group">
+            <label for="base-piramide">Área de la base (B):</label>
+            <input type="number" id="base-piramide" placeholder="B">
+          </div>
+          <div class="input-group">
+            <label for="altura-piramide">Altura (h):</label>
+            <input type="number" id="altura-piramide" placeholder="h">
+          </div>
+          <button class="calculate-btn" onclick="calcularVolumenPiramide()">Calcular</button>
+          <p id="resultado-volumen-piramide"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function calcularVolumenPiramide() {
+      const B = parseFloat(document.getElementById('base-piramide').value);
+      const h = parseFloat(document.getElementById('altura-piramide').value);
+      if (isNaN(B)||isNaN(h)||B<=0||h<=0) {
+        document.getElementById('resultado-volumen-piramide').textContent = 'Ingrese valores válidos.';
+        return;
+      }
+      const V = (1/3) * B * h;
+      document.getElementById('resultado-volumen-piramide').textContent = `Volumen = ${V.toFixed(2)} unidades³`;
+    }
+  </script>
+</body>
+</html>
