@@ -164,14 +164,61 @@ function calcularPerimetroPentagono() {
     }
 }
 
-// Selección del botón hamburguesa y el menú
-const toggleButton = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
-
-// Evento de clic para abrir/cerrar el menú
-toggleButton.addEventListener('click', () => {
-  navMenu.classList.toggle('open');
-
-  // Animación de líneas del botón hamburguesa (opcional)
-  toggleButton.classList.toggle('active');
-});
+  // Menu Hamburguesa
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navMenu = document.querySelector('.nav-menu');
+  
+  menuToggle.addEventListener('click', function() {
+    this.classList.toggle('active');
+    navMenu.classList.toggle('active');
+  });
+  
+  // Cerrar menú al hacer clic en un enlace
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navMenu.classList.remove('active');
+    });
+  });
+  
+  // Calculadora interactiva
+  const shapeCards = document.querySelectorAll('.shape-card');
+  const calculatorForms = document.querySelectorAll('.calculator-form');
+  
+  shapeCards.forEach(card => {
+    card.addEventListener('click', function() {
+      // Remover clase active de todas las tarjetas
+      shapeCards.forEach(c => c.classList.remove('active'));
+      
+      // Añadir clase active a la tarjeta seleccionada
+      this.classList.add('active');
+      
+      // Ocultar todos los formularios
+      calculatorForms.forEach(form => form.classList.remove('active'));
+      
+      // Mostrar el formulario correspondiente
+      const shapeType = this.getAttribute('data-shape');
+      document.querySelector(`.calculator-form[data-shape="${shapeType}"]`).classList.add('active');
+    });
+  });
+  
+  // Calcular resultados (ejemplo para cuadrado)
+  const calculateBtn = document.querySelector('.calculate-btn');
+  if(calculateBtn) {
+    calculateBtn.addEventListener('click', function() {
+      const side = parseFloat(document.querySelector('#square-side').value);
+      if(!isNaN(side)) {
+        const area = side * side;
+        const perimeter = 4 * side;
+        
+        const resultContainer = document.querySelector('.result-container');
+        resultContainer.innerHTML = `
+          <h3>Resultados</h3>
+          <p>Área: ${area.toFixed(2)}</p>
+          <p>Perímetro: ${perimeter.toFixed(2)}</p>
+        `;
+        resultContainer.classList.add('active');
+      }
+    });
+  }
