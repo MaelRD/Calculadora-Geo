@@ -163,3 +163,15 @@ function calcularPerimetroPentagono() {
                          'resultado-perimetro');
     }
 }
+
+// Selección del botón hamburguesa y el menú
+const toggleButton = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+
+// Evento de clic para abrir/cerrar el menú
+toggleButton.addEventListener('click', () => {
+  navMenu.classList.toggle('open');
+
+  // Animación de líneas del botón hamburguesa (opcional)
+  toggleButton.classList.toggle('active');
+});
